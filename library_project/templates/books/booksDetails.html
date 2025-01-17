@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Detalles Libro</title>
+</head>
+<body>
+   <h1>Detalles del libro: {{ book.title }}</h1>
+
+
+   <p>Detalles:</p>
+   <ul>
+       <li>Titulo: {{ book.title }}</li>
+       <li>Fecha de publicación: {{ book.published_date }}</li>
+       <li>Resumen: {{ book.summary }}</li>
+       {% for autor in book.authors.all %}
+           <li>Autor: {{ autor.first_name }} {{ autor.last_name }}</li>
+       {% endfor %}
+       <li>Género: {{ book.genre.name }}</li>
+   </ul>
+
+
+   <a style="text-decoration: none; color: black; border: 1px solid black; border-radius: 2px; background-color: #cfcfcf; padding: 3px" href="{% url 'books:index' %}">Volver a la vista de todos los libros</a>
+</body>
+</html>
+
+
+
+

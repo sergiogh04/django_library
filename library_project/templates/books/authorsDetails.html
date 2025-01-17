@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Detalles Autor</title>
+</head>
+<body>
+   <h1>Detalles del Autor: {{ author.name }} {{ author.last_name }}</h1>
+
+
+   <p>Detalles:</p>
+   <ul>
+       <li>Nombre completo: {{ author.name }} {{ author.last_name }}</li>
+       <li>Fecha de nacimiento: {{ author.birth_date }}</li>
+       <li>Libros escritos:
+           <ul>
+               {% for book in author.book_set.all %}
+                   <li>{{ book.title }}</li>
+               {% endfor %}
+           </ul>
+       </li>
+   </ul>
+</body>
+</html> 

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Lista</title>
+</head>
+<body>
+   <h1>Lista autores</h1>
+
+
+   <ul>
+       {% for author in authors %}
+           <li>{{ author.first_name }} {{ author.last_name }}  <a href="{% url 'books:author_detail' autor.id %}">Ver detalles</a></li>
+       {% endfor %}
+   </ul>
+
+
+   <a style="text-decoration: none; color: black; border: 1px solid black; border-radius: 2px; background-color: #cfcfcf; padding: 3px" href="{% url 'books:index' %}">Volver a la vista de todos los libros</a>
+
+
+</body>
+</html>
