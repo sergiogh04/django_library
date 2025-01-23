@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Authors</title>
+</head>
+<body>
+    <h1>Add Authors</h1>
+   <form action="{% url 'books:addAuthors' %}" method="post">
+        {% csrf_token %}
+        <label for="name">Author Name:</label>
+        <input id="name" type="text" name="name" value="{{ name }}">
+        <br>
+        <label for="last_name">Author Surname:</label>
+        <input id="last_name" type="text" name="last_name" value="{{ last_name }}">
+        <br>
+       <label for="birth_date" type="date" ></label>
+       <input id="birth_date" type="date" name="birth_date" value="{{ birth_date }}">
+        <input type="submit" value="Save">
+    </form>
+    <a href="{% url 'books:index' %}">Back to Author List</a>
+</body>
+</html>

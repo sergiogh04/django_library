@@ -16,6 +16,10 @@ urlpatterns = [
 
     path('<int:book_id>/', views.booksDetails, name='booksDetails'),
 
+    path("addAuthors", views.addAuthors, name="addAuthors"),
+
+    path("genreList", views.genreList, name="genreList"),
+
     ]
 
     # ex: /polls/5/

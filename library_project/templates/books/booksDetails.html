@@ -6,22 +6,24 @@
    <title>Detalles Libro</title>
 </head>
 <body>
-   <h1>Detalles del libro: {{ book.title }}</h1>
+   <h1>Book details: {{ book.title }}</h1>
 
 
-   <p>Detalles:</p>
+   <p>Details:</p>
    <ul>
-       <li>Titulo: {{ book.title }}</li>
-       <li>Fecha de publicación: {{ book.published_date }}</li>
-       <li>Resumen: {{ book.summary }}</li>
-       {% for autor in book.authors.all %}
-           <li>Autor: {{ autor.first_name }} {{ autor.last_name }}</li>
+       <li>Tittle: {{ book.title }}</li>
+       <li>Publish date: {{ book.publish_date }}</li>
+       <li>Summary: {{ book.summary }}</li>
+       {% for author in book.author.all %}
+           <li>
+               Author: <a href="{% url "books:author_detail" author.id %}">{{ author.name }} {{ author.last_name }}</a></li>
+           
        {% endfor %}
-       <li>Género: {{ book.genre.name }}</li>
+       <li>Genre: {{ book.genre.name }}</li>
    </ul>
 
 
-   <a style="text-decoration: none; color: black; border: 1px solid black; border-radius: 2px; background-color: #cfcfcf; padding: 3px" href="{% url 'books:index' %}">Volver a la vista de todos los libros</a>
+   <a style="text-decoration: none; color: black; border: 1px solid black; border-radius: 2px; background-color: #cfcfcf; padding: 3px" href="{% url 'books:index' %}">Back to the main page</a>
 </body>
 </html>
 

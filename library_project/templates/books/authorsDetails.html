@@ -5,14 +5,14 @@
  <title>Detalles Autor</title>
 </head>
 <body>
-   <h1>Detalles del Autor: {{ author.name }} {{ author.last_name }}</h1>
+   <h1>Author details: {{ author.name }} {{ author.last_name }}</h1>
 
 
-   <p>Detalles:</p>
+   <p>Details:</p>
    <ul>
-       <li>Nombre completo: {{ author.name }} {{ author.last_name }}</li>
-       <li>Fecha de nacimiento: {{ author.birth_date }}</li>
-       <li>Libros escritos:
+       <li>Full name: {{ author.name }} {{ author.last_name }}</li>
+       <li>Birth date: {{ author.birth_date }}</li>
+       <li>Written books:
            <ul>
                {% for book in author.book_set.all %}
                    <li>{{ book.title }}</li>

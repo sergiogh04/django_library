@@ -5,16 +5,25 @@
    <title>Libreria</title>
 </head>
 <body>
-   <h1>Libros</h1>
+   <h1>Library</h1>
 
 
    <ul>
-       {% for book in books %}
-           <li> {{ book.title }} <a href="{% url 'books:booksDetails' book.id %}">Ver detalles</a></li>
-       {% endfor %}
+      {% for book in books %}
+    <h2><a href="{% url 'books:booksDetails' book.id %}">{{ book.title }}</a></h2>
+    <p>By: {% for author in book.author.all %}<a href="{% url 'books:author_detail' author.id %}">{{ author }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+{% endfor %}
+   
    </ul>
+   
+   
+   
+   <a href="{% url 'books:addAuthors' %}">New Author</a>
 
-
-   <a style="text-decoration: none; color: black; border: 1px solid black; border-radius: 2px; background-color: #cfcfcf; padding: 3px" href="{% url 'books:author_list' %}">Lista de autores</a>
+    <br>
+    <br>
+   
+   <a style="text-decoration: aqua; color: blue; border: 1px solid black; border-radius: 2px; background-color: grey; padding: 3px" href="{% url 'books:author_list' %}">Author list</a>
+ <a style="text-decoration: aqua; color: blue; border: 1px solid black; border-radius: 2px; background-color: grey; padding: 3px" href="{% url 'books:genreList' %}">Genre List</a>
 </body>
 </html>
