@@ -1,5 +1,5 @@
 """
-URL configuration for library_project project.
+URL configuration for library_project.py project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -24,7 +24,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     #path('', views.home, name='home'),
-    path('books/', include("books.urls")),
+    path('', include("books.urls")),
+
+    path('accounts/', include("django.contrib.auth.urls")),
 
 
 

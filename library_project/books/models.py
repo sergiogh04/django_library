@@ -29,3 +29,9 @@ class Book(models.Model):
         return self.title
 
 
+class User(models.Model):
+    username = models.CharField(max_length=20)
+    email = models.EmailField()
+    password = models.CharField(max_length=16)
+    def __str__(self):
+        return self.username

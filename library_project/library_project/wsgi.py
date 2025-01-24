@@ -1,5 +1,5 @@
 """
-WSGI config for library_project project.
+WSGI config for library_project.py project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
